@@ -4,7 +4,28 @@ import pathlib
 import sys
 from io import StringIO
 from pathlib import Path
+import re
 
+import contextlib
+
+@contextlib.contextmanager
+def pushd(new_dir):
+    """
+    Move to a new directory and return to the previous one after context.
+    """
+    previous_dir = os.getcwd()
+    os.chdir(new_dir)
+    try:
+        yield
+    finally:
+        os.chdir(previous_dir)
+
+
+def glob_re(pattern, path):
+    """
+    Returns all strings that match the regex pattern.
+    """
+    return list(filter(re.compile(pattern).match, os.listdir(path)))
 
 
 # TODO add regex capabilities
