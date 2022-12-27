@@ -33,7 +33,7 @@ def grep(pattern, inp):
     """
     Searches for ``pattern`` in ``inp``.
 
-    >>> from smpl import io
+    >>> from smpl_io import io
     >>> write("test.txt","hi\\nho1\\n2\\n3\\n4\\n")
     >>> grep("h","test.txt").read()
     'hi\\nho1\\n'
