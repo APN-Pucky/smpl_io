@@ -5,25 +5,79 @@ import sys
 from io import StringIO
 from pathlib import Path
 import re
-
+import shutil
 import contextlib
 
+
 @contextlib.contextmanager
-def pushd(new_dir):
+def pushd(new_dir, tmp=False, cd=True):
     """
     Move to a new directory and return to the previous one after context.
+
+    Parameters
+    ----------
+    new_dir : str
+        new directory.
+    tmp: bool, optional
+        create the directory if it does not exist and delete after context, by default False
+    cd: bool, optional
+        change to (new) directory, by default True
+
+    Examples
+    --------
+    >>> import os
+    >>> p = os.getcwd()
+    >>> with pushd("tmptest",tmp=True):
+    ...     pp = os.getcwd()
+    ...     pp.startswith(p) and pp.endswith("tmptest")
+    True
+    >>> import os
+    >>> p = os.getcwd()
+    >>> with pushd("tmptest",tmp=True,):
+    ...     pp = os.getcwd()
+    ...     pp.startswith(p) and pp.endswith("tmptest")
+    True
     """
+
     previous_dir = os.getcwd()
-    os.chdir(new_dir)
+    if tmp:
+        abspath = os.path.abspath(new_dir)
+        os.makedirs(abspath, exist_ok=False)
+    if cd:
+        os.chdir(new_dir)
     try:
         yield
     finally:
-        os.chdir(previous_dir)
+        if cd:
+            os.chdir(previous_dir)
+        if tmp:
+            shutil.rmtree(abspath, ignore_errors=True)
 
 
 def glob_re(pattern, path):
     """
     Returns all strings that match the regex pattern.
+
+    Parameters
+    ----------
+    pattern : str
+        regex pattern.
+    path : str
+        path to search in.
+
+    Returns
+    -------
+    list
+        list of filenames that match the regex pattern.
+
+    Examples
+    --------
+    >>> import os
+    >>> with pushd("tmptest",tmp=True,cd=False):
+    ...     write("tmptest/test.txt","hi\\nho1\\n2\\n3\\n4\\n")
+    ...     glob_re(".*[xt][xt][xt]", "tmptest")
+    ['test.txt']
+
     """
     return list(filter(re.compile(pattern).match, os.listdir(path)))
 
@@ -229,17 +283,41 @@ def gf(i=3):
 def find_file(fname, up=0):
     """
     Searches for ``fname`` in all down folders or up folder to given order respectively.
+
+    Parameters
+    ----------
+    fname : str
+        file name.
+    up : int
+        number of up folders to search.
+
+    Returns
+    -------
+    str
+        path to the file.
+
+    Examples
+    --------
+    >>> import os
+    >>> find_file("io.py",0)
+    'smpl_io/io.py'
+    >>> os.chdir("smpl_io")
+    >>> find_file("io.py",0)
+    'io.py'
+    >>> find_file("Makefile",1)
+    '../Makefile'
+
     """
-    p = Path(fname).parent
-    n = Path(fname).name
+    p = Path(os.path.abspath(fname)).parent
+    n = Path(os.path.abspath(fname)).name
     if (p / n).is_file():
-        return str(p / n)
+        return str(os.path.relpath(p / n, os.path.abspath(".")))
     for _ in range(up):
         p = p.parent
 
     for f in p.rglob(n):
         if f.is_file():
-            return str(f)
+            return str(os.path.relpath(f, os.path.abspath(".")))
     return None
 
 
@@ -251,6 +329,12 @@ def pwd() -> str:
     -------
     str
         path to the path of current file.
+
+    Examples
+    --------
+    >>> pwd().endswith("smpl_io")
+    True
+
     """
     # pwd_ = "/".join(debug.get_line_number_file(split=False, _back=1)[1].split("/")[:-1])
     path = Path(__file__).parent.absolute()
@@ -350,6 +434,22 @@ def files(ending, folder="."):
 
 
 def pn(a, nnl=False):
+    """
+    Find variable with the same value as ``a`` in globals.
+    Then print its name and value.
+
+    Parameters
+    ----------
+    a : any
+        variable to find.
+    nnl : bool
+        no-new-line
+
+    Returns
+    -------
+    a : any
+        unchanged ``a``.
+    """
     gl = globals()
     for key in gl:
         if gl[key] == a:

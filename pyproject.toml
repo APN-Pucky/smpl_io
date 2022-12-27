@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "smpl_io"
 version = "0.0.0"
-description = "SiMPLe plotting and fitting"
+description = "simple input and output for python"
 authors = ["Alexander Puck Neuwirth <alexander@neuwirth-informatik.de>"]
 readme = "README.md"
 repository = "https://github.com/APN-Pucky/smpl_io"
