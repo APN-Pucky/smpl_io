@@ -13,7 +13,6 @@ Simplified plotting and fitting in python.
 
 ## Documentation
 
--   <https://smpl_io.readthedocs.io/en/stable/>
 -   <https://apn-pucky.github.io/smpl_io/index.html>
 
 ## Versions
