@@ -10,6 +10,8 @@ def grep(pattern, *inps, regex=False,open=True,A=0, B=0):
     >>> io.write("test.txt","hi\\nho1\\n2\\n3\\n4\\n")
     >>> grep("h","test.txt").read()
     'hi\\nho1\\n'
+    >>> grep("h.*\d","test.txt",regex=True).read()
+    'ho1\\n'
     """
     r = StringIO()
     for inp in inps:
