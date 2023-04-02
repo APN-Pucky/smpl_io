@@ -1,0 +1,40 @@
+smpl\_io.tail
+=============
+
+.. automodule:: smpl_io.tail
+  
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:                                         
+   
+      tail
+      tailf
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:                                         
+      :template: custom-class-template.rst               
+   
+      ReadBuffer
+      StringIO
+   
+   
+
+   
+   
+   
+
+
+

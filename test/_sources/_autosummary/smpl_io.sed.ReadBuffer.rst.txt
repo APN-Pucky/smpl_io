@@ -1,0 +1,25 @@
+smpl\_io.sed.ReadBuffer
+=======================
+
+.. currentmodule:: smpl_io.sed
+
+.. autoclass:: ReadBuffer
+   :members:                                   
+   :show-inheritance:                           
+   :inherited-members:                         
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ReadBuffer.__init__
+   
+   
+
+   
+   
+   

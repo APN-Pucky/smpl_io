@@ -1,0 +1,39 @@
+smpl\_io.sed
+============
+
+.. automodule:: smpl_io.sed
+  
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:                                         
+   
+      sed
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:                                         
+      :template: custom-class-template.rst               
+   
+      ReadBuffer
+      StringIO
+   
+   
+
+   
+   
+   
+
+
+

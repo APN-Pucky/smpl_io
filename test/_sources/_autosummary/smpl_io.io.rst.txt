@@ -20,7 +20,9 @@ smpl\_io.io
       gf
       glob_re
       grep
+      grepf
       head
+      headf
       import_path
       mkdirs
       pn
@@ -29,7 +31,9 @@ smpl\_io.io
       pwd
       read
       remove
+      sed
       tail
+      tailf
       write
    
    
@@ -43,6 +47,7 @@ smpl\_io.io
       :template: custom-class-template.rst               
    
       Path
+      ReadBuffer
       StringIO
    
    

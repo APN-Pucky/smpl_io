@@ -1,0 +1,25 @@
+smpl\_io.grep.ReadBuffer
+========================
+
+.. currentmodule:: smpl_io.grep
+
+.. autoclass:: ReadBuffer
+   :members:                                   
+   :show-inheritance:                           
+   :inherited-members:                         
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ReadBuffer.__init__
+   
+   
+
+   
+   
+   
