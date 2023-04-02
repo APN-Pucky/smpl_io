@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                1.0.6-5-g0700eaa
+                1.1.0
               </div>
             
           
@@ -188,6 +188,8 @@
 <span class="sd">    &gt;&gt;&gt; io.write(&quot;test.txt&quot;,&quot;hi\\nho1\\n2\\n3\\n4\\n&quot;)</span>
 <span class="sd">    &gt;&gt;&gt; grep(&quot;h&quot;,&quot;test.txt&quot;).read()</span>
 <span class="sd">    &#39;hi\\nho1\\n&#39;</span>
+<span class="sd">    &gt;&gt;&gt; grep(&quot;h.*\d&quot;,&quot;test.txt&quot;,regex=True).read()</span>
+<span class="sd">    &#39;ho1\\n&#39;</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">inp</span> <span class="ow">in</span> <span class="n">inps</span><span class="p">:</span>
