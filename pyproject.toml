@@ -8,6 +8,7 @@ repository = "https://github.com/APN-Pucky/smpl_io"
 
 [tool.poetry.dependencies]
 python = "^3.7"
+smpl_doc = "*"
 
 [tool.poetry.group.docs]
 optional = true

@@ -9,6 +9,14 @@ import shutil
 import contextlib
 
 
+from .grep import *
+from .tail import *
+from .head import *
+from .sed import *
+
+
+
+
 @contextlib.contextmanager
 def pushd(new_dir, tmp=False, cd=True):
     """
@@ -80,140 +88,6 @@ def glob_re(pattern, path):
 
     """
     return list(filter(re.compile(pattern).match, os.listdir(path)))
-
-def grepf(pattern, inp, **kwargs):
-    """
-    Searches for ``pattern`` in ``inp``.
-
-    >>> from smpl_io import io
-    >>> write("test.txt","hi\\nho1\\n2\\n3\\n4\\n")
-    >>> grep("h","test.txt").read()
-    'hi\\nho1\\n'
-    """
-    with open(inp, "r") as f:
-        return grep(f, pattern, **kwargs)
- 
-
-# TODO add regex capabilities
-def grep(pattern, inp, A=0, B=0):
-    """
-    Searches for ``pattern`` in ``inp``.
-
-    >>> from smpl_io import io
-    >>> write("test.txt","hi\\nho1\\n2\\n3\\n4\\n")
-    >>> grep("h","test.txt").read()
-    'hi\\nho1\\n'
-    """
-    r = ""
-    f = inp
-    lines = f.readlines()
-    for i, line in enumerate(lines):
-        match = False
-        for j in range(i - A, i + B + 1):
-            if j < 0 or j >= len(lines):
-                continue
-            if pattern in lines[j]:
-                match = True
-        if match:
-            r += line
-
-    return StringIO(r)
-
-
-def tailf(inp, n=1):
-    """
-    Returns the last ``n`` lines of ``fname``.
-
-    Parameters
-    ----------
-    inp : str
-        file name.
-
-    Returns
-    -------
-    str
-        last ``n`` lines of ``fname``.
-
-    Examples
-    --------
-    >>> import pandas as pd
-    >>> write("test.txt","hi\\n1\\n2\\n3\\n4\\n")
-    >>> pd.read_csv(tail("test.txt",n=2))
-       3
-    0  4
-    >>> pd.read_csv(tail("test.txt",n=3))
-       2
-    0  3
-    1  4
-
-    """
-    with open(inp, "r") as f:
-        return tail(f, n=n)
-
-
-def tail(inp, n=1):
-    """
-    Returns the last ``n`` lines of ``fname``.
-
-    Parameters
-    ----------
-    inp : buffer
-        buffer object.
-
-    Returns
-    -------
-    str
-        last ``n`` lines of ``fname``.
-
-    Examples
-    --------
-    >>> import pandas as pd
-    >>> write("test.txt","hi\\n1\\n2\\n3\\n4\\n")
-    >>> pd.read_csv(tail("test.txt",n=2))
-       3
-    0  4
-    >>> pd.read_csv(tail("test.txt",n=3))
-       2
-    0  3
-    1  4
-
-    """
-    return StringIO("\n".join(inp.readlines()[-n:]))
-
-
-def head(inp, n=1):
-    """
-    Returns the first ``n`` lines of ``fname``.
-
-    Parameters
-    ----------
-    inp : str
-        file name.
-
-    Returns
-    -------
-    str
-        first ``n`` lines of ``fname``.
-
-    Examples
-    --------
-    >>> import pandas as pd
-    >>> write("test.txt","hi\\n1\\n2\\n3\\n4\\n")
-    >>> pd.read_csv(head("test.txt",n=2))
-       hi
-    0   1
-    >>> pd.read_csv(head("test.txt",n=3))
-       hi
-    0   1
-    1   2
-
-    """
-    r = ""
-    with open(inp, "r") as f:
-        for _ in range(n):
-            r += f.readline()
-    return StringIO(r)
-
 
 def read(fname):
     """
