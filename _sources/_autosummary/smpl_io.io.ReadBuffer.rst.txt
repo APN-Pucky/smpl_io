@@ -1,0 +1,25 @@
+smpl\_io.io.ReadBuffer
+======================
+
+.. currentmodule:: smpl_io.io
+
+.. autoclass:: ReadBuffer
+   :members:                                   
+   :show-inheritance:                           
+   :inherited-members:                         
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~ReadBuffer.__init__
+   
+   
+
+   
+   
+   

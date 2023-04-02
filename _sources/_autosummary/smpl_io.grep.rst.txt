@@ -1,0 +1,40 @@
+smpl\_io.grep
+=============
+
+.. automodule:: smpl_io.grep
+  
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:                                         
+   
+      grep
+      grepf
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:                                         
+      :template: custom-class-template.rst               
+   
+      ReadBuffer
+      StringIO
+   
+   
+
+   
+   
+   
+
+
+
