@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 import shutil
 import contextlib
+import requests
 
 
 from .grep import *
@@ -15,6 +16,47 @@ from .head import *
 from .sed import *
 
 
+def open(to_be_read:str):
+    """
+    Return opened buffer of either file or URI
+    """
+    if to_be_read.startswith("http"):
+        return StringIO(requests.get(to_be_read).text)
+    else:
+        if not os.path.exists(to_be_read):
+            return StringIO("")
+        return open(to_be_read,"r")
+
+def read(to_be_read:str):
+    """
+    Open either a file or URI and return the content.
+    Reads the file ``to_be_read``.
+
+    Parameters
+    ----------
+    fname : str
+        file name.
+
+    Returns
+    -------
+    str
+        content of the file.
+
+    Examples
+    --------
+    >>> read("nonexistent.txt")
+    ''
+    >>> write("test.out","hi")
+    >>> read("test.out")
+    'hi'
+    """
+    if to_be_read.startswith("http"):
+        return requests.get(to_be_read).text
+    else:
+        if not os.path.exists(to_be_read):
+            return ""
+        with open(to_be_read,"r") as f:
+            return f.read()
 
 
 @contextlib.contextmanager
@@ -88,34 +130,6 @@ def glob_re(pattern, path):
 
     """
     return list(filter(re.compile(pattern).match, os.listdir(path)))
-
-def read(fname):
-    """
-    Reads the file ``fname``.
-
-    Parameters
-    ----------
-    fname : str
-        file name.
-
-    Returns
-    -------
-    str
-        content of the file.
-
-    Examples
-    --------
-    >>> read("nonexistent.txt")
-    ''
-    >>> write("test.out","hi")
-    >>> read("test.out")
-    'hi'
-    """
-    if not os.path.exists(fname):
-        return ""
-    with open(fname, "r") as f:
-        return f.read()
-
 
 def write(destination, content, mode="w+", create_dir=True):
     """
