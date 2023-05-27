@@ -1,33 +1,22 @@
 """Simplified input and output."""
+import contextlib
 import os
 import pathlib
+import re
+import shutil
 import sys
 from io import StringIO
 from pathlib import Path
-import re
-import shutil
-import contextlib
+
 import requests
 
-
 from .grep import *
-from .tail import *
 from .head import *
 from .sed import *
+from .tail import *
 
 
-def open(to_be_read:str):
-    """
-    Return opened buffer of either file or URI
-    """
-    if to_be_read.startswith("http"):
-        return StringIO(requests.get(to_be_read).text)
-    else:
-        if not os.path.exists(to_be_read):
-            return StringIO("")
-        return open(to_be_read,"r")
-
-def read(to_be_read:str):
+def read(to_be_read: str):
     """
     Open either a file or URI and return the content.
     Reads the file ``to_be_read``.
@@ -55,7 +44,7 @@ def read(to_be_read:str):
     else:
         if not os.path.exists(to_be_read):
             return ""
-        with open(to_be_read,"r") as f:
+        with open(to_be_read, "r") as f:
             return f.read()
 
 
@@ -130,6 +119,7 @@ def glob_re(pattern, path):
 
     """
     return list(filter(re.compile(pattern).match, os.listdir(path)))
+
 
 def write(destination, content, mode="w+", create_dir=True):
     """
@@ -393,9 +383,9 @@ def pn(a, nnl=False):
         if gl[key] == a:
             print(key)
     if nnl:
-        print("%s=%s" % (a.__name__, a), end="")
+        print(f"{a.__name__}={a}", end="")
     else:
-        print("%s=%s" % (a.__name__, a))
+        print(f"{a.__name__}={a}")
     return a
 
 
@@ -414,3 +404,17 @@ def remove(file):
     """
     if os.path.exists(file):
         os.remove(file)
+
+
+def open(to_be_read: str, mode="r"):
+    """
+    Return opened buffer of either file or URI
+    """
+    if mode != "r":
+        return open(to_be_read, mode)
+    if to_be_read.startswith("http"):
+        return StringIO(requests.get(to_be_read).text)
+    else:
+        if not os.path.exists(to_be_read):
+            return StringIO("")
+        return open(to_be_read, "r")

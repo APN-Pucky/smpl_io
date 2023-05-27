@@ -11,6 +11,15 @@ python = "^3.7"
 smpl_doc =  "^1.0.5"
 requests = "*"
 
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+pytest = "*"
+pytest-cov =  "*"
+pytest-profiling =  "*"
+#pytest-line-profiler-apn = {path="/home/apn/git/pytest-line-profiler", develop = true}
+
 [tool.poetry.group.docs]
 optional = true
 
@@ -33,14 +42,10 @@ optional = true
 [tool.poetry.group.dev.dependencies]
 pandas = ">=1.0.0"
 pre-commit = "^2.20.0"
-pytest = "*"
-pytest-cov =  "*"
-pytest-profiling =  "*"
-#pytest-line-profiler-apn = {path="/home/apn/git/pytest-line-profiler", develop = true}
+poetry-dynamic-versioning = {extras = ["plugin"], version = ">=0.21.1,<0.23.0"}
 #ipython =  "*"
 #jupyterlab =  "*"
 #jupyter = "*"
-poetry-dynamic-versioning = {extras = ["plugin"], version = ">=0.21.1,<0.23.0"}
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
