@@ -14,6 +14,7 @@ smpl\_io.io
    .. autosummary::
       :toctree:                                         
    
+      alias_open
       append
       files
       find_file
@@ -25,6 +26,7 @@ smpl\_io.io
       headf
       import_path
       mkdirs
+      open
       pn
       pr
       pushd
