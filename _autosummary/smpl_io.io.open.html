@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>smpl_io.head.ReadBuffer &mdash; smpl_io  documentation</title>
+  <title>smpl_io.io.open &mdash; smpl_io  documentation</title>
   
 
   
@@ -45,8 +45,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="smpl_io.head.StringIO" href="smpl_io.head.StringIO.html" />
-    <link rel="prev" title="smpl_io.head.headf" href="smpl_io.head.headf.html" /> 
+    <link rel="next" title="smpl_io.io.pn" href="smpl_io.io.pn.html" />
+    <link rel="prev" title="smpl_io.io.mkdirs" href="smpl_io.io.mkdirs.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,17 +100,39 @@
 <li class="toctree-l1 current"><a class="reference internal" href="smpl_io.html">smpl_io</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="smpl_io.version.html">smpl_io.version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smpl_io.grep.html">smpl_io.grep</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="smpl_io.head.html">smpl_io.head</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="smpl_io.head.head.html">smpl_io.head.head</a></li>
-<li class="toctree-l3"><a class="reference internal" href="smpl_io.head.headf.html">smpl_io.head.headf</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">smpl_io.head.ReadBuffer</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#smpl_io.head.ReadBuffer"><code class="docutils literal notranslate"><span class="pre">ReadBuffer</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="smpl_io.head.html">smpl_io.head</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="smpl_io.io.html">smpl_io.io</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.alias_open.html">smpl_io.io.alias_open</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.append.html">smpl_io.io.append</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.files.html">smpl_io.io.files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.find_file.html">smpl_io.io.find_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.gf.html">smpl_io.io.gf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.glob_re.html">smpl_io.io.glob_re</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.grep.html">smpl_io.io.grep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.grepf.html">smpl_io.io.grepf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.head.html">smpl_io.io.head</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.headf.html">smpl_io.io.headf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.import_path.html">smpl_io.io.import_path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.mkdirs.html">smpl_io.io.mkdirs</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">smpl_io.io.open</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#smpl_io.io.open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="smpl_io.head.StringIO.html">smpl_io.head.StringIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.pn.html">smpl_io.io.pn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.pr.html">smpl_io.io.pr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.pushd.html">smpl_io.io.pushd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.pwd.html">smpl_io.io.pwd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.read.html">smpl_io.io.read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.remove.html">smpl_io.io.remove</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.sed.html">smpl_io.io.sed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.tail.html">smpl_io.io.tail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.tailf.html">smpl_io.io.tailf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.write.html">smpl_io.io.write</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.Path.html">smpl_io.io.Path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.ReadBuffer.html">smpl_io.io.ReadBuffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.StringIO.html">smpl_io.io.StringIO</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="smpl_io.io.html">smpl_io.io</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smpl_io.read_buffer.html">smpl_io.read_buffer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smpl_io.sed.html">smpl_io.sed</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smpl_io.tail.html">smpl_io.tail</a></li>
@@ -181,15 +203,15 @@
         
           <li><a href="smpl_io.html">smpl_io</a> &raquo;</li>
         
-          <li><a href="smpl_io.head.html">smpl_io.head</a> &raquo;</li>
+          <li><a href="smpl_io.io.html">smpl_io.io</a> &raquo;</li>
         
-      <li>smpl_io.head.ReadBuffer</li>
+      <li>smpl_io.io.open</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/_autosummary/smpl_io.head.ReadBuffer.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/_autosummary/smpl_io.io.open.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -202,26 +224,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="smpl-io-head-readbuffer">
-<h1>smpl_io.head.ReadBuffer<a class="headerlink" href="#smpl-io-head-readbuffer" title="Permalink to this heading">¶</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="smpl_io.head.ReadBuffer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">smpl_io.head.</span></span><span class="sig-name descname"><span class="pre">ReadBuffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/smpl_io/read_buffer.html#ReadBuffer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#smpl_io.head.ReadBuffer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Buffer for reading from a file if <code class="docutils literal notranslate"><span class="pre">open</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="smpl_io.head.ReadBuffer.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/smpl_io/read_buffer.html#ReadBuffer.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#smpl_io.head.ReadBuffer.__init__" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<p class="rubric">Methods</p>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#smpl_io.head.ReadBuffer.__init__" title="smpl_io.head.ReadBuffer.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(input[, open])</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
+  <section id="smpl-io-io-open">
+<h1>smpl_io.io.open<a class="headerlink" href="#smpl-io-io-open" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="smpl_io.io.open">
+<span class="sig-prename descclassname"><span class="pre">smpl_io.io.</span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_be_read</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/smpl_io/io.html#open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#smpl_io.io.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return opened buffer of either file or URI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>to_be_read</strong> (<em>str</em>) – </p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -232,8 +245,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="smpl_io.head.StringIO.html" class="btn btn-neutral float-right" title="smpl_io.head.StringIO" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="smpl_io.head.headf.html" class="btn btn-neutral float-left" title="smpl_io.head.headf" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="smpl_io.io.pn.html" class="btn btn-neutral float-right" title="smpl_io.io.pn" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="smpl_io.io.mkdirs.html" class="btn btn-neutral float-left" title="smpl_io.io.mkdirs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

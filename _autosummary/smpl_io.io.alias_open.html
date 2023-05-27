@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>smpl_io.io.alias_open &mdash; smpl_io  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="smpl_io.io.append" href="smpl_io.io.append.html" />
+    <link rel="prev" title="smpl_io.io" href="smpl_io.io.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> smpl_io
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.1.2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="smpl_io.html">smpl_io</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="smpl_io.version.html">smpl_io.version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smpl_io.grep.html">smpl_io.grep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smpl_io.head.html">smpl_io.head</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="smpl_io.io.html">smpl_io.io</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">smpl_io.io.alias_open</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#smpl_io.io.alias_open"><code class="docutils literal notranslate"><span class="pre">alias_open()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.append.html">smpl_io.io.append</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.files.html">smpl_io.io.files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.find_file.html">smpl_io.io.find_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.gf.html">smpl_io.io.gf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.glob_re.html">smpl_io.io.glob_re</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.grep.html">smpl_io.io.grep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.grepf.html">smpl_io.io.grepf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.head.html">smpl_io.io.head</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.headf.html">smpl_io.io.headf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.import_path.html">smpl_io.io.import_path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.mkdirs.html">smpl_io.io.mkdirs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.open.html">smpl_io.io.open</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.pn.html">smpl_io.io.pn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.pr.html">smpl_io.io.pr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.pushd.html">smpl_io.io.pushd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.pwd.html">smpl_io.io.pwd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.read.html">smpl_io.io.read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.remove.html">smpl_io.io.remove</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.sed.html">smpl_io.io.sed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.tail.html">smpl_io.io.tail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.tailf.html">smpl_io.io.tailf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.write.html">smpl_io.io.write</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.Path.html">smpl_io.io.Path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.ReadBuffer.html">smpl_io.io.ReadBuffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="smpl_io.io.StringIO.html">smpl_io.io.StringIO</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="smpl_io.read_buffer.html">smpl_io.read_buffer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smpl_io.sed.html">smpl_io.sed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smpl_io.tail.html">smpl_io.tail</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Profiling:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../performance/index.html">Graph Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance/line.html">Line Profiling</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Versions:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://smpl_io.readthedocs.io/en/stable/">RTD</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://apn-pucky.github.io/smpl_io/">Stable</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://apn-pucky.github.io/smpl_io/test/">Dev</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Links:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/APN-Pucky/smpl_io">GitHub</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">smpl_io</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="smpl_io.html">smpl_io</a> &raquo;</li>
+        
+          <li><a href="smpl_io.io.html">smpl_io.io</a> &raquo;</li>
+        
+      <li>smpl_io.io.alias_open</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/_autosummary/smpl_io.io.alias_open.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="smpl-io-io-alias-open">
+<h1>smpl_io.io.alias_open<a class="headerlink" href="#smpl-io-io-alias-open" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="smpl_io.io.alias_open">
+<span class="sig-prename descclassname"><span class="pre">smpl_io.io.</span></span><span class="sig-name descname"><span class="pre">alias_open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buffering</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closefd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opener</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smpl_io.io.alias_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open file and return a stream.  Raise OSError upon failure.</p>
+<p>file is either a text or byte string giving the name (and the path
+if the file isn’t in the current working directory) of the file to
+be opened or an integer file descriptor of the file to be
+wrapped. (If a file descriptor is given, it is closed when the
+returned I/O object is closed, unless closefd is set to False.)</p>
+<p>mode is an optional string that specifies the mode in which the file
+is opened. It defaults to ‘r’ which means open for reading in text
+mode.  Other common values are ‘w’ for writing (truncating the file if
+it already exists), ‘x’ for creating and writing to a new file, and
+‘a’ for appending (which on some Unix systems, means that all writes
+append to the end of the file regardless of the current seek position).
+In text mode, if encoding is not specified the encoding used is platform
+dependent: locale.getpreferredencoding(False) is called to get the
+current locale encoding. (For reading and writing raw bytes use binary
+mode and leave encoding unspecified.) The available modes are:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Character</p></td>
+<td><p>Meaning</p></td>
+</tr>
+<tr class="row-even"><td><p>‘r’</p></td>
+<td><p>open for reading (default)</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘w’</p></td>
+<td><p>open for writing, truncating the file first</p></td>
+</tr>
+<tr class="row-even"><td><p>‘x’</p></td>
+<td><p>create a new file and open it for writing</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘a’</p></td>
+<td><p>open for writing, appending to the end of the file if it exists</p></td>
+</tr>
+<tr class="row-even"><td><p>‘b’</p></td>
+<td><p>binary mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘t’</p></td>
+<td><p>text mode (default)</p></td>
+</tr>
+<tr class="row-even"><td><p>‘+’</p></td>
+<td><p>open a disk file for updating (reading and writing)</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘U’</p></td>
+<td><p>universal newline mode (deprecated)</p></td>
+</tr>
+</tbody>
+</table>
+<p>The default mode is ‘rt’ (open for reading text). For binary random
+access, the mode ‘w+b’ opens and truncates the file to 0 bytes, while
+‘r+b’ opens the file without truncation. The ‘x’ mode implies ‘w’ and
+raises an <cite>FileExistsError</cite> if the file already exists.</p>
+<p>Python distinguishes between files opened in binary and text modes,
+even when the underlying operating system doesn’t. Files opened in
+binary mode (appending ‘b’ to the mode argument) return contents as
+bytes objects without any decoding. In text mode (the default, or when
+‘t’ is appended to the mode argument), the contents of the file are
+returned as strings, the bytes having been first decoded using a
+platform-dependent encoding or using the specified encoding if given.</p>
+<p>‘U’ mode is deprecated and will raise an exception in future versions
+of Python.  It has no effect in Python 3.  Use newline to control
+universal newlines mode.</p>
+<p>buffering is an optional integer used to set the buffering policy.
+Pass 0 to switch buffering off (only allowed in binary mode), 1 to select
+line buffering (only usable in text mode), and an integer &gt; 1 to indicate
+the size of a fixed-size chunk buffer.  When no buffering argument is
+given, the default buffering policy works as follows:</p>
+<ul class="simple">
+<li><p>Binary files are buffered in fixed-size chunks; the size of the buffer
+is chosen using a heuristic trying to determine the underlying device’s
+“block size” and falling back on <cite>io.DEFAULT_BUFFER_SIZE</cite>.
+On many systems, the buffer will typically be 4096 or 8192 bytes long.</p></li>
+<li><p>“Interactive” text files (files for which isatty() returns True)
+use line buffering.  Other text files use the policy described above
+for binary files.</p></li>
+</ul>
+<p>encoding is the name of the encoding used to decode or encode the
+file. This should only be used in text mode. The default encoding is
+platform dependent, but any encoding supported by Python can be
+passed.  See the codecs module for the list of supported encodings.</p>
+<p>errors is an optional string that specifies how encoding errors are to
+be handled—this argument should not be used in binary mode. Pass
+‘strict’ to raise a ValueError exception if there is an encoding error
+(the default of None has the same effect), or pass ‘ignore’ to ignore
+errors. (Note that ignoring encoding errors can lead to data loss.)
+See the documentation for codecs.register or run ‘help(codecs.Codec)’
+for a list of the permitted encoding error strings.</p>
+<p>newline controls how universal newlines works (it only applies to text
+mode). It can be None, ‘’, ‘n’, ‘r’, and ‘rn’.  It works as
+follows:</p>
+<ul class="simple">
+<li><p>On input, if newline is None, universal newlines mode is
+enabled. Lines in the input can end in ‘n’, ‘r’, or ‘rn’, and
+these are translated into ‘n’ before being returned to the
+caller. If it is ‘’, universal newline mode is enabled, but line
+endings are returned to the caller untranslated. If it has any of
+the other legal values, input lines are only terminated by the given
+string, and the line ending is returned to the caller untranslated.</p></li>
+<li><p>On output, if newline is None, any ‘n’ characters written are
+translated to the system default line separator, os.linesep. If
+newline is ‘’ or ‘n’, no translation takes place. If newline is any
+of the other legal values, any ‘n’ characters written are translated
+to the given string.</p></li>
+</ul>
+<p>If closefd is False, the underlying file descriptor will be kept open
+when the file is closed. This does not work when a file name is given
+and must be True in that case.</p>
+<p>A custom opener can be used by passing a callable as <em>opener</em>. The
+underlying file descriptor for the file object is then obtained by
+calling <em>opener</em> with (<em>file</em>, <em>flags</em>). <em>opener</em> must return an open
+file descriptor (passing os.open as <em>opener</em> results in functionality
+similar to passing None).</p>
+<p>open() returns a file object whose type depends on the mode, and
+through which the standard file operations such as reading and writing
+are performed. When open() is used to open a file in a text mode (‘w’,
+‘r’, ‘wt’, ‘rt’, etc.), it returns a TextIOWrapper. When used to open
+a file in a binary mode, the returned class varies: in read binary
+mode, it returns a BufferedReader; in write binary and append binary
+modes, it returns a BufferedWriter, and in read/write mode, it returns
+a BufferedRandom.</p>
+<p>It is also possible to use a string or bytearray as a file for both
+reading and writing. For strings StringIO can be used like a file
+opened in a text mode, and for bytes a BytesIO can be used like a file
+opened in a binary mode.</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="smpl_io.io.append.html" class="btn btn-neutral float-right" title="smpl_io.io.append" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="smpl_io.io.html" class="btn btn-neutral float-left" title="smpl_io.io" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, Alexander Puck Neuwirth.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
