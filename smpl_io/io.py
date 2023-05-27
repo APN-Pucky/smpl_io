@@ -406,12 +406,15 @@ def remove(file):
         os.remove(file)
 
 
+alias_open = open
+
+
 def open(to_be_read: str, mode="r"):
     """
     Return opened buffer of either file or URI
     """
     if mode != "r":
-        return open(to_be_read, mode)
+        return alias_open(to_be_read, mode)
     if to_be_read.startswith("http"):
         return StringIO(requests.get(to_be_read).text)
     else:
