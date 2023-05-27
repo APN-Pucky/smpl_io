@@ -420,4 +420,4 @@ def open(to_be_read: str, mode="r"):
     else:
         if not os.path.exists(to_be_read):
             return StringIO("")
-        return open(to_be_read, "r")
+        return alias_open(to_be_read, "r")
