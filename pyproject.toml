@@ -42,7 +42,7 @@ optional = true
 [tool.poetry.group.dev.dependencies]
 pandas = ">=1.0.0"
 pre-commit = "^2.20.0"
-poetry-dynamic-versioning = {extras = ["plugin"], version = ">=0.21.1,<0.23.0"}
+poetry-dynamic-versioning = {extras = ["plugin"], version = ">=0.21.1,<0.25.0"}
 #ipython =  "*"
 #jupyterlab =  "*"
 #jupyter = "*"
