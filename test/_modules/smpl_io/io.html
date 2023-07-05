@@ -33,9 +33,6 @@
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/sphinx_highlight.js"></script>
     
@@ -67,7 +64,7 @@
             
             
               <div class="version">
-                1.1.2-1-g2060bdc
+                1.1.4
               </div>
             
           
@@ -216,6 +213,9 @@
 <span class="sd">    &gt;&gt;&gt; write(&quot;test.out&quot;,&quot;hi&quot;)</span>
 <span class="sd">    &gt;&gt;&gt; read(&quot;test.out&quot;)</span>
 <span class="sd">    &#39;hi&#39;</span>
+<span class="sd">    &gt;&gt;&gt; read(&quot;https://raw.githubusercontent.com/APN-Pucky/smpl_io/master/LICENSE&quot;).split(&quot;\\n&quot;)[0].strip()</span>
+<span class="sd">    &#39;GNU GENERAL PUBLIC LICENSE&#39;</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">to_be_read</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">to_be_read</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
@@ -589,7 +589,19 @@
 
 <div class="viewcode-block" id="open"><a class="viewcode-back" href="../../_autosummary/smpl_io.io.open.html#smpl_io.io.open">[docs]</a><span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="n">to_be_read</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Return opened buffer of either file or URI</span>
+<span class="sd">    Return opened buffer of either file or URI.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    to_be_read : str</span>
+<span class="sd">        file name or URI.</span>
+<span class="sd">    mode : str</span>
+<span class="sd">        mode to open the file.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    buffer</span>
+<span class="sd">        opened buffer.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">mode</span> <span class="o">!=</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">alias_open</span><span class="p">(</span><span class="n">to_be_read</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>

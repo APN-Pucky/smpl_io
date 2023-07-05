@@ -34,9 +34,6 @@
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     
@@ -70,7 +67,7 @@
             
             
               <div class="version">
-                1.1.2-1-g2060bdc
+                1.1.4
               </div>
             
           
@@ -234,7 +231,7 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">io</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;test.txt&quot;</span><span class="p">,</span><span class="s2">&quot;hi</span><span class="se">\n</span><span class="s2">ho1</span><span class="se">\n</span><span class="s2">2</span><span class="se">\n</span><span class="s2">3</span><span class="se">\n</span><span class="s2">4</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">grep</span><span class="p">(</span><span class="s2">&quot;h&quot;</span><span class="p">,</span><span class="s2">&quot;test.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="go">&#39;hi\nho1\n&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">grep</span><span class="p">(</span><span class="s2">&quot;h.*\d&quot;</span><span class="p">,</span><span class="s2">&quot;test.txt&quot;</span><span class="p">,</span><span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">grep</span><span class="p">(</span><span class="s2">&quot;h.*</span><span class="se">\\</span><span class="s2">d&quot;</span><span class="p">,</span><span class="s2">&quot;test.txt&quot;</span><span class="p">,</span><span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="go">&#39;ho1\n&#39;</span>
 </pre></div>
 </div>
