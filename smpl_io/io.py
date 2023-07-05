@@ -38,6 +38,9 @@ def read(to_be_read: str):
     >>> write("test.out","hi")
     >>> read("test.out")
     'hi'
+    >>> read("https://raw.githubusercontent.com/APN-Pucky/smpl_io/master/LICENSE").split("\\n")[0].trim()
+    'GNU GENERAL PUBLIC LICENSE'
+
     """
     if to_be_read.startswith("http"):
         return requests.get(to_be_read).text
@@ -411,7 +414,19 @@ alias_open = open
 
 def open(to_be_read: str, mode="r"):
     """
-    Return opened buffer of either file or URI
+    Return opened buffer of either file or URI.
+
+    Parameters
+    ----------
+    to_be_read : str
+        file name or URI.
+    mode : str
+        mode to open the file.
+
+    Returns
+    -------
+    buffer
+        opened buffer.
     """
     if mode != "r":
         return alias_open(to_be_read, mode)

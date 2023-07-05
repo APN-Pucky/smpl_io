@@ -1,8 +1,12 @@
 import re
 from io import StringIO
+
+import smpl_doc.doc as doc
+
 from .read_buffer import ReadBuffer
-import smpl_doc.doc as doc 
-def grep(pattern, *inps, regex=False,open=True,A=0, B=0):
+
+
+def grep(pattern, *inps, regex=False, open=True, A=0, B=0):
     """
     Searches for ``pattern`` in ``inp``.
 
@@ -10,12 +14,12 @@ def grep(pattern, *inps, regex=False,open=True,A=0, B=0):
     >>> io.write("test.txt","hi\\nho1\\n2\\n3\\n4\\n")
     >>> grep("h","test.txt").read()
     'hi\\nho1\\n'
-    >>> grep("h.*\d","test.txt",regex=True).read()
+    >>> grep("h.*\\d","test.txt",regex=True).read()
     'ho1\\n'
     """
     r = StringIO()
     for inp in inps:
-        with ReadBuffer(inp,open=open) as f:
+        with ReadBuffer(inp, open=open) as f:
             lines = f.readlines()
             for i, line in enumerate(lines):
                 match = False
@@ -26,8 +30,10 @@ def grep(pattern, *inps, regex=False,open=True,A=0, B=0):
                         match = True
                 if match:
                     r.write(line)
-    r.seek(0,0)
+    r.seek(0, 0)
     return r
+
+
 grepf = doc.deprecated(
     version="1.0.6.1",
     removed_in="2.0.0",

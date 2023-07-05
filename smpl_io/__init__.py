@@ -4,4 +4,7 @@ from importlib.metadata import version
 
 package = "smpl_io"
 
-__version__ = version(package)
+try:
+    __version__ = version(package)
+except:
+    __version__ = "unknown"
