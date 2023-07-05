@@ -7,7 +7,7 @@ readme = "README.md"
 repository = "https://github.com/APN-Pucky/smpl_io"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 smpl_doc =  "^1.0.5"
 requests = "*"
 
@@ -24,7 +24,7 @@ pytest-profiling =  "*"
 optional = true
 
 [tool.poetry.group.docs.dependencies]
-sphinx = "*"
+sphinx = "<7.0.0"
 sphinx-rtd-theme = "*"
 sphinxcontrib-napoleon = "*"
 #nbsphinx = "*"

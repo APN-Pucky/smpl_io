@@ -38,7 +38,7 @@ def read(to_be_read: str):
     >>> write("test.out","hi")
     >>> read("test.out")
     'hi'
-    >>> read("https://raw.githubusercontent.com/APN-Pucky/smpl_io/master/LICENSE").split("\\n")[0].trim()
+    >>> read("https://raw.githubusercontent.com/APN-Pucky/smpl_io/master/LICENSE").split("\\n")[0].strip()
     'GNU GENERAL PUBLIC LICENSE'
 
     """
