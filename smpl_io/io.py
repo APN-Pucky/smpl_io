@@ -49,7 +49,7 @@ def read(to_be_read: str):
     else:
         if not os.path.exists(to_be_read):
             return ""
-        with open(to_be_read, "r") as f:
+        with open(to_be_read, "r") as f:  # TODO should be checked here
             return f.read()
 
 
@@ -145,6 +145,8 @@ def write(destination, content, mode="w+", create_dir=True):
     Examples
     --------
     >>> write(sys.stdout,"hi")
+    hi
+    >>> write("-","hi")
     hi
     >>> write("test.out","hi")
     >>> read("test.out")
