@@ -44,6 +44,8 @@ def read(to_be_read: str):
     """
     if to_be_read.startswith("http"):
         return requests.get(to_be_read).text
+    elif to_be_read == "-":
+        return sys.stdin.read()
     else:
         if not os.path.exists(to_be_read):
             return ""
@@ -150,6 +152,9 @@ def write(destination, content, mode="w+", create_dir=True):
     """
     # TODO add http and other string based write methodes
     if isinstance(destination, str):
+        if destination == "-":
+            print(content)
+            return
         if create_dir:
             try:
                 os.makedirs(os.path.dirname(destination), exist_ok=True)
