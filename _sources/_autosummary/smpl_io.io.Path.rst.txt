@@ -26,6 +26,7 @@ smpl\_io.io.Path
       ~Path.expanduser
       ~Path.glob
       ~Path.group
+      ~Path.hardlink_to
       ~Path.home
       ~Path.is_absolute
       ~Path.is_block_device
@@ -34,6 +35,7 @@ smpl\_io.io.Path
       ~Path.is_fifo
       ~Path.is_file
       ~Path.is_mount
+      ~Path.is_relative_to
       ~Path.is_reserved
       ~Path.is_socket
       ~Path.is_symlink
@@ -48,6 +50,7 @@ smpl\_io.io.Path
       ~Path.owner
       ~Path.read_bytes
       ~Path.read_text
+      ~Path.readlink
       ~Path.relative_to
       ~Path.rename
       ~Path.replace
@@ -60,6 +63,7 @@ smpl\_io.io.Path
       ~Path.touch
       ~Path.unlink
       ~Path.with_name
+      ~Path.with_stem
       ~Path.with_suffix
       ~Path.write_bytes
       ~Path.write_text
