@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "smpl_io"
-version = "0.0.0"
+version = "1.3.0"
 description = "SiMPLe magic input and output for python"
 authors = ["Alexander Puck Neuwirth <alexander@neuwirth-informatik.de>"]
 readme = "README.md"
