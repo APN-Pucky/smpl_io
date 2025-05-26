@@ -14,6 +14,7 @@ from .grep import *
 from .head import *
 from .sed import *
 from .tail import *
+from .cat import *
 
 
 def read(to_be_read: str):

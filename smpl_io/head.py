@@ -34,8 +34,7 @@ def head(*inps, open=True, n=1):
     r = StringIO()
     for inp in inps:
         with ReadBuffer(inp,open=open) as inp:
-            for _ in range(n):
-                r.write(inp.readline())
+            r.write("\n".join(inp.readlines()[:n]))
     r.seek(0,0)
     return r
 headf= doc.deprecated(
