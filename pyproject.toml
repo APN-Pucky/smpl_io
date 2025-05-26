@@ -36,16 +36,6 @@ numpydoc = "*"
 myst-parser  = "*"
 toml = "*"
 
-
-[tool.poetry.group.test]
-optional = true
-
-[tool.poetry.group.test.dependencies]
-pandas = ">=1.0.0"
-pytest = "*"
-pytest-cov =  "*"
-pytest-profiling =  "*"
-
 [tool.poetry.group.dev]
 optional = true
 
